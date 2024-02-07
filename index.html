@@ -19,14 +19,14 @@
                 var targetHeight = screenHeight * 0.8; // Adjust the multiplier as needed
 
                 // Ensure a minimum height
-                targetHeight = Math.max(targetHeight, 400); // Set a minimum height, adjust as needed
+                targetHeight = Math.max(targetHeight, 600); // Set a minimum height, adjust as needed
 
                 iframe.style.height = targetHeight + 'px';
             }
         }
 
         // Set initial height
-        setIframeHeight();
+        setIframeHeight(600);
 
         // Update height on window resize
         window.addEventListener('resize', setIframeHeight);
