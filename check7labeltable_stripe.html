@@ -13,23 +13,23 @@
     <!-- JavaScript to dynamically set iframe height -->
     <script>
         function setIframeHeight() {
-            var iframe = document.getElementById('stripeIframe');
-            if (!iframe) return; // Exit if iframe element not found
+    var iframe = document.getElementById('stripeIframe');
+    if (iframe) {
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 600;
+        var targetHeight = screenHeight * 0.8; // Adjust the multiplier as needed
 
-            var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 600;
-            var targetHeight = screenHeight * 0.8; // Adjust the multiplier as needed
+        // Ensure a minimum height
+        targetHeight = Math.max(targetHeight, 600); // Set a minimum height, adjust as needed
 
-            // Ensure a minimum height
-            targetHeight = Math.max(targetHeight, 600); // Set a minimum height, adjust as needed
+        iframe.style.height = targetHeight + 'px';
+    }
+}
 
-            iframe.style.height = targetHeight + 'px';
-        }
+// Set initial height
+setIframeHeight();
 
-        // Set initial height
-        setIframeHeight();
-
-        // Update height on window resize
-        window.addEventListener('resize', setIframeHeight);
+// Update height on window resize
+window.addEventListener('resize', setIframeHeight);
     </script>
 </body>
 </html>
